@@ -1,0 +1,12 @@
+rankstring <- 'Chord ~ Count, CTs ~ Esc; Chord ~ -Count'
+filterstring <- 'A~B;B~C'
+
+lapply(list(rankstring, filterstring),
+       function(string) {
+         ranklist <- lapply(strsplit(string, split = ';')[[1]],
+                            
+                            function(rs) lapply(strsplit(rs, split = "\n|,")[[1]], 
+                                                function(r) parse(text = r)[[1]]))}) -> formulae
+         
+         formulae <- Map(list, formulae[[1]], formulae[[2]])
+         

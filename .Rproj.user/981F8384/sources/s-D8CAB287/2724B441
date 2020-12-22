@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1608322278273.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2724B441",
+    "lastKnownWriteTime" : 1608324283,
+    "last_content_update" : 1608324283977,
+    "path" : "~/Bridge/Research/Projects/Pitch/Harmony/Chorales/Scripts/Analysisstuff.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "12,40",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

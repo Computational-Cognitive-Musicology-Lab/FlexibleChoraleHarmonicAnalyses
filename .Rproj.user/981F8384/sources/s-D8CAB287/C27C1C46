@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1608301209510.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C27C1C46",
+    "lastKnownWriteTime" : 1608673019,
+    "last_content_update" : 1608673019,
+    "path" : "~/Bridge/Research/Projects/Pitch/Harmony/Chorales/Scripts/FlexibleChoraleHarmonicAnalysis/R/ChoraleData.R",
+    "project_path" : "R/ChoraleData.R",
+    "properties" : {
+        "cursorPosition" : "2,0",
+        "docOutlineVisible" : "1",
+        "marks" : "<:0,0\n>:0,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

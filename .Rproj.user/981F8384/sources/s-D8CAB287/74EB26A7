@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1608301434175.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2263553733",
+    "id" : "74EB26A7",
+    "lastKnownWriteTime" : 1608672695,
+    "last_content_update" : 1608672695447,
+    "path" : "~/Bridge/Research/Projects/Pitch/Harmony/Chorales/Scripts/FlexibleChoraleHarmonicAnalysis/R/ChoraleAnalysis.R",
+    "project_path" : "R/ChoraleAnalysis.R",
+    "properties" : {
+        "cursorPosition" : "228,3",
+        "docOutlineSize" : "192.74290913644109",
+        "docOutlineVisible" : "1",
+        "marks" : "<:0,0\n>:0,0",
+        "scrollLine" : "223"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

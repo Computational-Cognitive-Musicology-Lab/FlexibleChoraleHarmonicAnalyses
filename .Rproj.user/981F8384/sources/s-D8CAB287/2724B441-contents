@@ -1,0 +1,62 @@
+library(magrittr)
+library(FlexibleChoraleHarmonicAnalysis)
+
+perms <- copy(PermutationalChoraleAnnotations)
+
+
+##
+levels <- c("CT", "Ped", "PT", "Ret", "Inc", "NT", "Ant", "Sus", "App", "Esc", "DPT1", "DPT2", "syncPT", "NTchrom", "Camb1", "Camb2", "syncNT", "SusInc", "Sus+")
+ChoraleTable_Notes$Note_PotentialNonChordToneType <- factor(ChoraleTable_Notes$Note_PotentialNonChordToneType , levels = levels)
+
+contourTables <- perms[ ,
+                        list(CT = list(table(ChoraleTable_Notes$Note_PotentialNonChordToneType[CT_Note_Number[[1]]])),
+              NCT = list(table(ChoraleTable_Notes$Note_PotentialNonChordToneType[NCT_Note_Number[[1]]]))), by = .(1:nrow(perms))]
+
+
+
+CT.Contour <- as.data.table(do.call('rbind', contourTables$CT))
+NCT.Contour <- as.data.table(do.call('rbind', contourTables$NCT))
+
+
+durTables <- perms[ ,
+                    list(CT = list(ChoraleTable_Notes$Note_Duration_Remaining[CT_Note_Number[[1]]]),
+                         NCT = list(ChoraleTable_Notes$Note_Duration_Remaining[NCT_Note_Number[[1]]])),
+                    by = .(1:nrow(perms))]
+
+
+# attacks <- perms[ ,
+#                   {
+#                     list(CT = list(ChoraleTable_Notes$Note_Duration_Remaining[CT_Note_Number[[1]]]),
+#                          NCT = list(ChoraleTable_Notes$Note_Duration_Remaining[NCT_Note_Number[[1]]])),
+#                     by = .(1:nrow(perms))]
+
+
+
+ChoraleAnalyses <- list(Window = list(Number = as.integer(perms$Slice_WindowNumber),
+                               Duration = sapply(perms$Chord_Duration, sum),
+                               Slices = as.integer(perms$Window_NumberOf_Slices)),
+
+                        Chord = list(Count = as.integer(perms$Window_NumberOf_Chords),
+                              Slices = perms$Chord_NumberOf_Slices,
+                              Roots     = perms$Root,
+                              Qualities = perms$Quality,
+                              Durations = perms$Chord_Duration,
+                              Inversion = lapply(perms$Chord_Inversion, as.integer),
+                              SeventhsResolve = perms$Chord_7thsResolve,
+                              CompletionDelay = list(Slices = lapply(perms$Chord_CompletionDelay_Slices, as.integer),
+                                                     Durations = perms$Chord_CompletionDelay_Duration)),
+                        CTs  = list(Count = lengths(perms$CT_Note_Number),
+                                    Contour = CT.Contour,
+                                    Durations = lapply(durTables$CT, function(x) x[!is.na(x)])),
+                        NCTs = list(Count = lengths(perms$NCT_Note_Number),
+                                    Contour = NCT.Contour,
+                                    Durations = lapply(durTables$NCT, function(x) x[!is.na(x)]))
+)
+
+
+
+
+
+
+
+
